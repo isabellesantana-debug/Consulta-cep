@@ -16,16 +16,16 @@ async function buscarCep() {
     const cepFormatado = cep.replace(/\D/g, "");
 
     if (cepFormatado.length !== 8) {
-        mensagem.textContent = "Digite um CEP válido!";
+        mensagem.textContent = "CEP inválido!";
         return;
     }
 
+    mensagem.textContent = "Buscando...";
+
     try {
 
-        mensagem.textContent = "Buscando CEP...";
-
         const resposta = await fetch(
-            `https://viacep.com.br/ws/${cepFormatado}/json/`
+            "https://viacep.com.br/ws/" + cepFormatado + "/json/"
         );
 
         const dados = await resposta.json();
@@ -35,16 +35,18 @@ async function buscarCep() {
             return;
         }
 
-        document.getElementById("logradouro").value = dados.logradouro;
-        document.getElementById("bairro").value = dados.bairro;
-        document.getElementById("cidade").value = dados.localidade;
-        document.getElementById("estado").value = dados.uf;
+        document.getElementById("logradouro").value = dados.logradouro || "";
+        document.getElementById("bairro").value = dados.bairro || "";
+        document.getElementById("cidade").value = dados.localidade || "";
+        document.getElementById("estado").value = dados.uf || "";
 
         mensagem.textContent = "CEP encontrado com sucesso!";
 
     } catch (erro) {
 
-        mensagem.textContent = "Erro ao buscar o CEP!";
+        mensagem.textContent = "Erro ao consultar o CEP. Tente novamente.";
+
+        console.log(erro);
 
     }
 }
