@@ -1,48 +1,134 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Consulta CEP</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
     <div class="container">
-
+      
         <h1>Consulta CEP</h1>
 
-        <form>
-            <label for="cep">Digite o CEP:</label>
-            <input type="text" id="cep" placeholder="Ex: 79000-000">
+        
+        <div class="campo">
 
-            <button type="button">Buscar CEP</button>
-        </form>
+            <label for="cep">
+                CEP
+            </label>
 
+            <input
+                type="text"
+                id="cep"
+                placeholder="Digite o CEP"
+                maxlength="9"
+                autocomplete="off"
+                inputmode="numeric"
+            >
+        </div>
+
+       
+
+        <button id="botaoBuscar">
+            Buscar CEP
+        </button>
+
+        
         <div id="mensagem"></div>
 
-        <h2>Resultado da consulta</h2>
+       
+        <div class="resultados" id="resultados" style="display: none;">
 
-        <div class="resultados">
+          
+            <div class="campo campo-logradouro">
 
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" id="logradouro" readonly>
+                <label for="logradouro">
 
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" readonly>
+                    Logradouro
 
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" readonly>
+                </label>
 
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" readonly>
+                <input
+                    type="text"
+                    id="logradouro"
+                    readonly
+                >
+            </div>
+
+            
+
+            <div class="campo">
+
+                <label for="bairro">
+
+                    Bairro
+
+                </label>
+
+                <input
+                    type="text"
+                    id="bairro"
+                    readonly
+                >
+
+            </div>
+           
+            <div class="campo">
+
+                <label for="cidade">
+
+                    Cidade
+
+                </label>
+
+                <input
+                    type="text"
+                    id="cidade"
+                    readonly
+                >
+
+            </div>
+
+        
+
+            <div class="campo">
+
+                <label for="estado">
+
+                    Estado
+
+                </label>
+
+                <input
+                    type="text"
+                    id="estado"
+                    readonly
+                >
+
+            </div>
 
         </div>
 
     </div>
-<script src="script.js"></script>
+
+
+
+  
+
+    <script src="api.js"></script>
+
 
 </body>
+
 </html>
