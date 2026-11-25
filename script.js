@@ -35,10 +35,10 @@ async function buscarCep() {
             return;
         }
 
-        document.getElementById("logradouro").value = dados.logradouro || "";
-        document.getElementById("bairro").value = dados.bairro || "";
-        document.getElementById("cidade").value = dados.localidade || "";
-        document.getElementById("estado").value = dados.uf || "";
+        document.getElementById("logradouro").value = dados.logradouro;
+        document.getElementById("bairro").value = dados.bairro;
+        document.getElementById("cidade").value = dados.localidade ;
+        document.getElementById("estado").value = dados.uf;
 
         mensagem.textContent = "CEP encontrado com sucesso!";
 
