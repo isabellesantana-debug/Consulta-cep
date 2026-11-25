@@ -24,6 +24,8 @@ async function bucarCEP() {
     document.getElementById("cidade").value = dados.localidade;
     document.getElementById("estado").value = dados.uf;
 
+    resultados.style.display = "grid";
+
     } catch (erro) {
         alert(erro.message);
     
