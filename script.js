@@ -16,7 +16,7 @@ async function buscarCep() {
     const cepFormatado = cep.replace(/\D/g, "");
 
     if (cepFormatado.length !== 8) {
-        mensagem.textContent = "CEP inválido!";
+        mensagem.textContent = "CEP invalido!";
         return;
     }
 
